@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SMTHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TB_ACCOUNT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="21" Nullable="false" />
+    <Property Name="Passwd" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="m_bAuthority" Type="tinyint" Nullable="false" />
+    <Property Name="MailAdress" Type="varchar" MaxLength="350" />
+    <Property Name="PrivateKey" Type="varchar" MaxLength="400" />
+    <Property Name="Name" Type="varchar" MaxLength="70" />
+  </EntityType>
+  <EntityType Name="TB_BLOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strTile" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="strDesc" Type="text" Nullable="false" />
+    <Property Name="m_iSender" Type="int" Nullable="false" />
+    <Property Name="m_dtSendDate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="TB_CATEGORIES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strTitle" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="m_iTopMenu" Type="int" Nullable="false" />
+    <Property Name="m_isBrand" Type="bit" Nullable="false" />
+    <Property Name="ImageUrl" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TB_COSTTYPE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Symbol" Type="char" MaxLength="4" />
+    <Property Name="SymbolPosition" Type="bit" />
+  </EntityType>
+  <EntityType Name="TB_PRODUCT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="m_iBrand" Type="int" Nullable="false" />
+    <Property Name="m_iCategory" Type="int" Nullable="false" />
+    <Property Name="strTitle" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="strDesc" Type="text" Nullable="false" />
+    <Property Name="CoverImage" Type="nvarchar" MaxLength="255" />
+    <Property Name="m_iPrice" Type="int" Nullable="false" />
+    <Property Name="m_bPriceType" Type="tinyint" Nullable="false" />
+    <Property Name="Docs" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <Function Name="ADD_NEW_PRODUCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="db_owner">
+    <Parameter Name="m_iBrandID" Type="int" Mode="In" />
+    <Parameter Name="m_iCategory" Type="int" Mode="In" />
+    <Parameter Name="strTitle" Type="nvarchar" Mode="In" />
+    <Parameter Name="strDesc" Type="text" Mode="In" />
+    <Parameter Name="CoverImage" Type="nvarchar" Mode="In" />
+    <Parameter Name="m_iPrice" Type="int" Mode="In" />
+    <Parameter Name="m_bPricetype" Type="tinyint" Mode="In" />
+    <Parameter Name="strDocs" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="SMTHModelStoreContainer">
+    <EntitySet Name="TB_ACCOUNT" EntityType="Self.TB_ACCOUNT" Schema="db_owner" store:Type="Tables" />
+    <EntitySet Name="TB_BLOG" EntityType="Self.TB_BLOG" Schema="db_owner" store:Type="Tables" />
+    <EntitySet Name="TB_CATEGORIES" EntityType="Self.TB_CATEGORIES" Schema="db_owner" store:Type="Tables" />
+    <EntitySet Name="TB_COSTTYPE" EntityType="Self.TB_COSTTYPE" Schema="db_owner" store:Type="Tables" />
+    <EntitySet Name="TB_PRODUCT" EntityType="Self.TB_PRODUCT" Schema="db_owner" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

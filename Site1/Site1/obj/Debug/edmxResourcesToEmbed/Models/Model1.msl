@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SMTHModelStoreContainer" CdmEntityContainer="SMTHEntities">
+    <EntitySetMapping Name="TB_ACCOUNT">
+      <EntityTypeMapping TypeName="SMTHModel.TB_ACCOUNT">
+        <MappingFragment StoreEntitySet="TB_ACCOUNT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+          <ScalarProperty Name="m_bAuthority" ColumnName="m_bAuthority" />
+          <ScalarProperty Name="MailAdress" ColumnName="MailAdress" />
+          <ScalarProperty Name="PrivateKey" ColumnName="PrivateKey" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_BLOG">
+      <EntityTypeMapping TypeName="SMTHModel.TB_BLOG">
+        <MappingFragment StoreEntitySet="TB_BLOG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="strTile" ColumnName="strTile" />
+          <ScalarProperty Name="strDesc" ColumnName="strDesc" />
+          <ScalarProperty Name="m_iSender" ColumnName="m_iSender" />
+          <ScalarProperty Name="m_dtSendDate" ColumnName="m_dtSendDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_CATEGORIES">
+      <EntityTypeMapping TypeName="SMTHModel.TB_CATEGORIES">
+        <MappingFragment StoreEntitySet="TB_CATEGORIES">
+          <ScalarProperty Name="m_isBrand" ColumnName="m_isBrand" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="strTitle" ColumnName="strTitle" />
+          <ScalarProperty Name="m_iTopMenu" ColumnName="m_iTopMenu" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_COSTTYPE">
+      <EntityTypeMapping TypeName="SMTHModel.TB_COSTTYPE">
+        <MappingFragment StoreEntitySet="TB_COSTTYPE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="SymbolPosition" ColumnName="SymbolPosition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_PRODUCT">
+      <EntityTypeMapping TypeName="SMTHModel.TB_PRODUCT">
+        <MappingFragment StoreEntitySet="TB_PRODUCT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="m_iBrand" ColumnName="m_iBrand" />
+          <ScalarProperty Name="m_iCategory" ColumnName="m_iCategory" />
+          <ScalarProperty Name="strTitle" ColumnName="strTitle" />
+          <ScalarProperty Name="strDesc" ColumnName="strDesc" />
+          <ScalarProperty Name="CoverImage" ColumnName="CoverImage" />
+          <ScalarProperty Name="m_iPrice" ColumnName="m_iPrice" />
+          <ScalarProperty Name="m_bPriceType" ColumnName="m_bPriceType" />
+          <ScalarProperty Name="Docs" ColumnName="Docs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ADD_NEW_PRODUCT" FunctionName="SMTHModel.Store.ADD_NEW_PRODUCT" />
+  </EntityContainerMapping>
+</Mapping>

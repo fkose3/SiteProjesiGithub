@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SMTHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TB_ACCOUNT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="21" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Passwd" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="m_bAuthority" Type="Byte" Nullable="false" />
+    <Property Name="MailAdress" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="PrivateKey" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TB_BLOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strTile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="strDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="m_iSender" Type="Int32" Nullable="false" />
+    <Property Name="m_dtSendDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="TB_CATEGORIES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="strTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="m_iTopMenu" Type="Int32" Nullable="false" />
+    <Property Name="ImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="m_isBrand" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_COSTTYPE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Symbol" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="SymbolPosition" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TB_PRODUCT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="m_iBrand" Type="Int32" Nullable="false" />
+    <Property Name="m_iCategory" Type="Int32" Nullable="false" />
+    <Property Name="strTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="strDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CoverImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="m_iPrice" Type="Int32" Nullable="false" />
+    <Property Name="m_bPriceType" Type="Byte" Nullable="false" />
+    <Property Name="Docs" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="SMTHEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TB_ACCOUNT" EntityType="Self.TB_ACCOUNT" />
+    <EntitySet Name="TB_BLOG" EntityType="Self.TB_BLOG" />
+    <EntitySet Name="TB_CATEGORIES" EntityType="Self.TB_CATEGORIES" />
+    <EntitySet Name="TB_COSTTYPE" EntityType="Self.TB_COSTTYPE" />
+    <EntitySet Name="TB_PRODUCT" EntityType="Self.TB_PRODUCT" />
+    <FunctionImport Name="ADD_NEW_PRODUCT">
+      <Parameter Name="m_iBrandID" Mode="In" Type="Int32" />
+      <Parameter Name="m_iCategory" Mode="In" Type="Int32" />
+      <Parameter Name="strTitle" Mode="In" Type="String" />
+      <Parameter Name="strDesc" Mode="In" Type="String" />
+      <Parameter Name="CoverImage" Mode="In" Type="String" />
+      <Parameter Name="m_iPrice" Mode="In" Type="Int32" />
+      <Parameter Name="m_bPricetype" Mode="In" Type="Byte" />
+      <Parameter Name="strDocs" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

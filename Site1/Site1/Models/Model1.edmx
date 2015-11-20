@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SMTHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TB_ACCOUNT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="21" Nullable="false" />
+          <Property Name="Passwd" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="m_bAuthority" Type="tinyint" Nullable="false" />
+          <Property Name="MailAdress" Type="varchar" MaxLength="350" />
+          <Property Name="PrivateKey" Type="varchar" MaxLength="400" />
+          <Property Name="Name" Type="varchar" MaxLength="70" />
+        </EntityType>
+        <EntityType Name="TB_BLOG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="strTile" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="strDesc" Type="text" Nullable="false" />
+          <Property Name="m_iSender" Type="int" Nullable="false" />
+          <Property Name="m_dtSendDate" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="TB_CATEGORIES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="strTitle" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="m_iTopMenu" Type="int" Nullable="false" />
+          <Property Name="m_isBrand" Type="bit" Nullable="false" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TB_COSTTYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Symbol" Type="char" MaxLength="4" />
+          <Property Name="SymbolPosition" Type="bit" />
+        </EntityType>
+        <EntityType Name="TB_PRODUCT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="m_iBrand" Type="int" Nullable="false" />
+          <Property Name="m_iCategory" Type="int" Nullable="false" />
+          <Property Name="strTitle" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="strDesc" Type="text" Nullable="false" />
+          <Property Name="CoverImage" Type="nvarchar" MaxLength="255" />
+          <Property Name="m_iPrice" Type="int" Nullable="false" />
+          <Property Name="m_bPriceType" Type="tinyint" Nullable="false" />
+          <Property Name="Docs" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <Function Name="ADD_NEW_PRODUCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="db_owner">
+          <Parameter Name="m_iBrandID" Type="int" Mode="In" />
+          <Parameter Name="m_iCategory" Type="int" Mode="In" />
+          <Parameter Name="strTitle" Type="nvarchar" Mode="In" />
+          <Parameter Name="strDesc" Type="text" Mode="In" />
+          <Parameter Name="CoverImage" Type="nvarchar" Mode="In" />
+          <Parameter Name="m_iPrice" Type="int" Mode="In" />
+          <Parameter Name="m_bPricetype" Type="tinyint" Mode="In" />
+          <Parameter Name="strDocs" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="SMTHModelStoreContainer">
+          <EntitySet Name="TB_ACCOUNT" EntityType="Self.TB_ACCOUNT" Schema="db_owner" store:Type="Tables" />
+          <EntitySet Name="TB_BLOG" EntityType="Self.TB_BLOG" Schema="db_owner" store:Type="Tables" />
+          <EntitySet Name="TB_CATEGORIES" EntityType="Self.TB_CATEGORIES" Schema="db_owner" store:Type="Tables" />
+          <EntitySet Name="TB_COSTTYPE" EntityType="Self.TB_COSTTYPE" Schema="db_owner" store:Type="Tables" />
+          <EntitySet Name="TB_PRODUCT" EntityType="Self.TB_PRODUCT" Schema="db_owner" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SMTHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TB_ACCOUNT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="21" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Passwd" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="m_bAuthority" Type="Byte" Nullable="false" />
+          <Property Name="MailAdress" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+          <Property Name="PrivateKey" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TB_BLOG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="strTile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="strDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="m_iSender" Type="Int32" Nullable="false" />
+          <Property Name="m_dtSendDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TB_CATEGORIES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="strTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="m_iTopMenu" Type="Int32" Nullable="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="m_isBrand" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_COSTTYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Symbol" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="SymbolPosition" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="TB_PRODUCT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="m_iBrand" Type="Int32" Nullable="false" />
+          <Property Name="m_iCategory" Type="Int32" Nullable="false" />
+          <Property Name="strTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="strDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CoverImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="m_iPrice" Type="Int32" Nullable="false" />
+          <Property Name="m_bPriceType" Type="Byte" Nullable="false" />
+          <Property Name="Docs" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="SMTHEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TB_ACCOUNT" EntityType="Self.TB_ACCOUNT" />
+          <EntitySet Name="TB_BLOG" EntityType="Self.TB_BLOG" />
+          <EntitySet Name="TB_CATEGORIES" EntityType="Self.TB_CATEGORIES" />
+          <EntitySet Name="TB_COSTTYPE" EntityType="Self.TB_COSTTYPE" />
+          <EntitySet Name="TB_PRODUCT" EntityType="Self.TB_PRODUCT" />
+          <FunctionImport Name="ADD_NEW_PRODUCT">
+            <Parameter Name="m_iBrandID" Mode="In" Type="Int32" />
+            <Parameter Name="m_iCategory" Mode="In" Type="Int32" />
+            <Parameter Name="strTitle" Mode="In" Type="String" />
+            <Parameter Name="strDesc" Mode="In" Type="String" />
+            <Parameter Name="CoverImage" Mode="In" Type="String" />
+            <Parameter Name="m_iPrice" Mode="In" Type="Int32" />
+            <Parameter Name="m_bPricetype" Mode="In" Type="Byte" />
+            <Parameter Name="strDocs" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SMTHModelStoreContainer" CdmEntityContainer="SMTHEntities">
+          <EntitySetMapping Name="TB_ACCOUNT">
+            <EntityTypeMapping TypeName="SMTHModel.TB_ACCOUNT">
+              <MappingFragment StoreEntitySet="TB_ACCOUNT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+                <ScalarProperty Name="m_bAuthority" ColumnName="m_bAuthority" />
+                <ScalarProperty Name="MailAdress" ColumnName="MailAdress" />
+                <ScalarProperty Name="PrivateKey" ColumnName="PrivateKey" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_BLOG">
+            <EntityTypeMapping TypeName="SMTHModel.TB_BLOG">
+              <MappingFragment StoreEntitySet="TB_BLOG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="strTile" ColumnName="strTile" />
+                <ScalarProperty Name="strDesc" ColumnName="strDesc" />
+                <ScalarProperty Name="m_iSender" ColumnName="m_iSender" />
+                <ScalarProperty Name="m_dtSendDate" ColumnName="m_dtSendDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_CATEGORIES">
+            <EntityTypeMapping TypeName="SMTHModel.TB_CATEGORIES">
+              <MappingFragment StoreEntitySet="TB_CATEGORIES">
+                <ScalarProperty Name="m_isBrand" ColumnName="m_isBrand" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="strTitle" ColumnName="strTitle" />
+                <ScalarProperty Name="m_iTopMenu" ColumnName="m_iTopMenu" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_COSTTYPE">
+            <EntityTypeMapping TypeName="SMTHModel.TB_COSTTYPE">
+              <MappingFragment StoreEntitySet="TB_COSTTYPE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+                <ScalarProperty Name="SymbolPosition" ColumnName="SymbolPosition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_PRODUCT">
+            <EntityTypeMapping TypeName="SMTHModel.TB_PRODUCT">
+              <MappingFragment StoreEntitySet="TB_PRODUCT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="m_iBrand" ColumnName="m_iBrand" />
+                <ScalarProperty Name="m_iCategory" ColumnName="m_iCategory" />
+                <ScalarProperty Name="strTitle" ColumnName="strTitle" />
+                <ScalarProperty Name="strDesc" ColumnName="strDesc" />
+                <ScalarProperty Name="CoverImage" ColumnName="CoverImage" />
+                <ScalarProperty Name="m_iPrice" ColumnName="m_iPrice" />
+                <ScalarProperty Name="m_bPriceType" ColumnName="m_bPriceType" />
+                <ScalarProperty Name="Docs" ColumnName="Docs" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ADD_NEW_PRODUCT" FunctionName="SMTHModel.Store.ADD_NEW_PRODUCT" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
