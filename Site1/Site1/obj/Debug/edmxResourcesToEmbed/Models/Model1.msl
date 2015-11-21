@@ -48,6 +48,8 @@
     <EntitySetMapping Name="TB_PRODUCT">
       <EntityTypeMapping TypeName="SMTHModel.TB_PRODUCT">
         <MappingFragment StoreEntitySet="TB_PRODUCT">
+          <ScalarProperty Name="m_iProductType" ColumnName="m_iProductType" />
+          <ScalarProperty Name="Stars" ColumnName="Stars" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="m_iBrand" ColumnName="m_iBrand" />
           <ScalarProperty Name="m_iCategory" ColumnName="m_iCategory" />

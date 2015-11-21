@@ -53,6 +53,8 @@
     <Property Name="m_iPrice" Type="int" Nullable="false" />
     <Property Name="m_bPriceType" Type="tinyint" Nullable="false" />
     <Property Name="Docs" Type="varchar" MaxLength="1000" />
+    <Property Name="Stars" Type="char" MaxLength="4000" />
+    <Property Name="m_iProductType" Type="int" Nullable="false" />
   </EntityType>
   <Function Name="ADD_NEW_PRODUCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="db_owner">
     <Parameter Name="m_iBrandID" Type="int" Mode="In" />

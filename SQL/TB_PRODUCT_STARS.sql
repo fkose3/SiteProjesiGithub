@@ -1,0 +1,2 @@
+ALTER TABLE TB_PRODUCT
+ADD Stars char(4000) 

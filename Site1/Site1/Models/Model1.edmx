@@ -58,6 +58,8 @@
           <Property Name="m_iPrice" Type="int" Nullable="false" />
           <Property Name="m_bPriceType" Type="tinyint" Nullable="false" />
           <Property Name="Docs" Type="varchar" MaxLength="1000" />
+          <Property Name="Stars" Type="char" MaxLength="4000" />
+          <Property Name="m_iProductType" Type="int" Nullable="false" />
         </EntityType>
         <Function Name="ADD_NEW_PRODUCT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="db_owner">
           <Parameter Name="m_iBrandID" Type="int" Mode="In" />
@@ -133,6 +135,8 @@
           <Property Name="m_iPrice" Type="Int32" Nullable="false" />
           <Property Name="m_bPriceType" Type="Byte" Nullable="false" />
           <Property Name="Docs" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Stars" Type="String" MaxLength="4000" FixedLength="true" Unicode="false" />
+          <Property Name="m_iProductType" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityContainer Name="SMTHEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TB_ACCOUNT" EntityType="Self.TB_ACCOUNT" />
@@ -204,6 +208,8 @@
           <EntitySetMapping Name="TB_PRODUCT">
             <EntityTypeMapping TypeName="SMTHModel.TB_PRODUCT">
               <MappingFragment StoreEntitySet="TB_PRODUCT">
+                <ScalarProperty Name="m_iProductType" ColumnName="m_iProductType" />
+                <ScalarProperty Name="Stars" ColumnName="Stars" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="m_iBrand" ColumnName="m_iBrand" />
                 <ScalarProperty Name="m_iCategory" ColumnName="m_iCategory" />

@@ -29,3 +29,34 @@ c:\users\z70\documents\visual studio 2012\Projects\Site1\Site1\obj\Debug\Site1.c
 c:\users\z70\documents\visual studio 2012\Projects\Site1\Site1\obj\Debug\Site1.dll
 c:\users\z70\documents\visual studio 2012\Projects\Site1\Site1\obj\Debug\Site1.pdb
 C:\Users\Z70\Documents\Visual Studio 2012\Projects\Site1\Site1\bin\Site1.dll.config
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\Site1.dll.config
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\Site1.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\Site1.pdb
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\Antlr3.Runtime.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\EntityFramework.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\Microsoft.Web.Infrastructure.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\Newtonsoft.Json.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Net.Http.Formatting.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Web.Http.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Web.Http.WebHost.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Web.Mvc.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Web.Optimization.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Web.Providers.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Web.Razor.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Web.WebPages.Deployment.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Web.WebPages.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Web.WebPages.Razor.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\WebGrease.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\EntityFramework.xml
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\Newtonsoft.Json.xml
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Net.Http.Formatting.xml
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Web.Http.xml
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Web.Http.WebHost.xml
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Web.Mvc.xml
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Web.Razor.xml
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Web.WebPages.xml
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Web.WebPages.Deployment.xml
+D:\Site\SiteProjesiGithub\Site1\Site1\bin\System.Web.WebPages.Razor.xml
+D:\Site\SiteProjesiGithub\Site1\Site1\obj\Debug\Site1.csprojResolveAssemblyReference.cache
+D:\Site\SiteProjesiGithub\Site1\Site1\obj\Debug\Site1.dll
+D:\Site\SiteProjesiGithub\Site1\Site1\obj\Debug\Site1.pdb

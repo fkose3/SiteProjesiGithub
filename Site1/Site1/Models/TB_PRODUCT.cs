@@ -23,5 +23,7 @@ namespace Site1.Models
         public int m_iPrice { get; set; }
         public byte m_bPriceType { get; set; }
         public string Docs { get; set; }
+        public string Stars { get; set; }
+        public int m_iProductType { get; set; }
     }
 }
