@@ -24,5 +24,10 @@ namespace Site1.Controllers
             return View();
         }
 
+        public ActionResult ScriptView()
+        {
+            return View();
+        }
+
     }
 }

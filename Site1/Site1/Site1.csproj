@@ -150,6 +150,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\RunScript.cs" />
     <Compile Include="Models\SettingsReader.cs" />
     <Compile Include="Models\TB_ACCOUNT.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -439,9 +440,12 @@
     <Content Include="Settings\Setting.ini" />
     <Content Include="Views\main\About.cshtml" />
     <Content Include="Views\main\Product.cshtml" />
+    <Content Include="Settings\EFScipts\main.EFScript" />
+    <Content Include="Views\main\ScriptView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Settings\Language\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

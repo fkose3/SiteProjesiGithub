@@ -1,0 +1,8 @@
+﻿<command>
+	<template>~/Views/theme/DefaultTheme.cshtml</template>
+</command>
+
+<command>
+  <h1>Test sayfası</h1>
+  <h3>EF Production scripts</h3>
+</command>

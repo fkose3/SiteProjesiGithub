@@ -1,0 +1,8 @@
+﻿@using Site1.Models
+@{
+    RunScript script = new RunScript(Request["script"] == null ? "main.EFScript" : string.Format("{0}.EFScript", Request["script"]));
+    script.Run();
+    Layout = script.Layout;
+}
+
+@script.Content

@@ -1,4 +1,7 @@
 ﻿@using Site1.Models
+@{ 
+    int size = 0;
+}
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -437,15 +440,16 @@
           </div>
         </div>
         <div class="col-md-2 col-sm-4">
-          <h4>Shopping Guide</h4>
-          <ul class="links">
-            <li class="first"><a href="#" title="How to buy">How to buy</a></li>
-            <li><a href="faq.html" title="FAQs">FAQs</a></li>
-            <li><a href="#" title="Payment">Payment</a></li>
-            <li><a href="#" title="Shipment&lt;/a&gt;">Shipment</a></li>
-            <li><a href="#" title="Where is my order?">Where is my order?</a></li>
-            <li class="last"><a href="#" title="Return policy">Return policy</a></li>
-          </ul>
+            <h4>@SettingsReader.Read("FOOTER", "EShopGuideTitle")</h4>
+            <ul class="links">
+                @{
+                    size = int.Parse(SettingsReader.Read("FOOTER", "EShopGuideCount").Trim());
+                    for (int i = 1; i <= size; i++)
+                    {
+                        <li>@(new HtmlString(SettingsReader.Read("FOOTER", String.Format("EShopGuideData_{0}", i.ToString("00")))))</li>
+                    }
+                }
+            </ul>
         </div>
         <div class="col-md-2 col-sm-4">
           <h4>Style Advisor</h4>
@@ -459,14 +463,15 @@
           </ul>
         </div>
         <div class="col-md-2 col-sm-4">
-          <h4>Information</h4>
+          <h4>@SettingsReader.Read("FOOTER", "InfoTitle")</h4>
           <ul class="links">
-            <li class="first"><a href="#" title="privacy policy">Privacy policy</a></li>
-            <li><a href="#/" title="Search Terms">Search Terms</a></li>
-            <li><a href="#" title="Advanced Search">Advanced Search</a></li>
-            <li><a href="contact_us.html" title="Contact Us">Contact Us</a></li>
-            <li><a href="#" title="Suppliers">Suppliers</a></li>
-            <li class=" last"><a href="#" title="Our stores" class="link-rss">Our stores</a></li>
+              @{ 
+                  size = int.Parse(SettingsReader.Read("FOOTER", "InfoCount").Trim());
+                  for (int i = 1; i <= size; i++)
+                  {
+                    <li>@(new HtmlString(SettingsReader.Read("FOOTER", String.Format("InfoData_{0}", i.ToString("00")))))</li>
+                  }
+              }
           </ul>
         </div>
         <div class="col-md-3 col-sm-4">
@@ -485,7 +490,7 @@
     <div class="footer-bottom">
       <div class="container">
         <div class="row">
-          <div class="col-sm-5 col-xs-12 coppyright"> &copy; 2015. All Rights Reserved. Designed by <a href="#">magikcommerce.com</a> </div>
+          <div class="col-sm-5 col-xs-12 coppyright"> &copy; @SettingsReader.Read("FOOTER", "Copyright")</div>
           <div class="col-sm-7 col-xs-12 company-links">
             <ul class="links">
               <li><a href="#" title="Magento Themes">Magento Themes</a></li>
